@@ -1,0 +1,150 @@
+<config>
+    <!-- ********************************** PROD ******************************** -->
+    <!-- PROD Spark Conf -->
+    <spark_conf>
+        <name>spark_cdh_5.11</name>
+        <!--<host_and_port>spark://10.0.108.52:7077</host_and_port>-->
+        <host_and_port>spark://10.0.108.237:7077</host_and_port>
+        <hdfs_xml_source>/crt/etlprocesses/xml/</hdfs_xml_source>
+        <cores_max>48</cores_max>
+        <executor_memory>12g</executor_memory>
+        <driver_memory>5g</driver_memory>
+        <executor_cores>4</executor_cores>
+        <network_timeout>3000</network_timeout>
+        <shuffle_compress>true</shuffle_compress>
+        <!--<sql_shuffle_partitions>2000</sql_shuffle_partitions>-->
+        <sql_crossjoin_enabled>true</sql_crossjoin_enabled>
+        <hive_exec_dynamic_partition>true</hive_exec_dynamic_partition>
+        <hive_exec_dynamic_partition_mode>nonstrict</hive_exec_dynamic_partition_mode>
+        <hive_exec_max_dynamic_partitions>3650</hive_exec_max_dynamic_partitions>
+        <hive_exec_max_dynamic_partitions_pernode>3650</hive_exec_max_dynamic_partitions_pernode>
+    </spark_conf>
+
+    <email_conf>
+        <email_from_address>zhanglei852@crc.com.hk</email_from_address>
+        <email_sender_user>zhanglei852</email_sender_user>
+        <email_sender_password>Oj2019</email_sender_password>
+        <email_host>10.0.37.68</email_host>
+        <email_stmp_port>25</email_stmp_port>
+    </email_conf>
+
+    <elasticsearch_conf>
+        <name>elasticsearch</name>
+        <host_and_port>http://10.0.108.20:9266</host_and_port>
+        <nodes_and_ports>10.0.108.20:9266</nodes_and_ports>
+    </elasticsearch_conf>
+
+    <kudu_conf>
+        <name>kudu</name>
+        <host_and_port>10.0.108.231:7051,10.0.108.232:7051,10.0.108.233:7051</host_and_port>
+    </kudu_conf>
+
+    <kafka_conf>
+        <name>kafka_cdh_5.11</name>
+        <brokers>jtcrtvpra304:9092,jtcrtvpra305:9092,jtcrtvpra306:9092</brokers>
+    </kafka_conf>
+
+    <kafka_conf>
+        <name>kafka_confluent_3.2.1</name>
+        <brokers>jtcrtvpra304:9092,jtcrtvpra305:9092,jtcrtvpra306:9092</brokers>
+    </kafka_conf>
+
+    <!-- PROD MySQL -->
+    <db_connection>
+        <name>mysql_member</name>
+        <db_type>mysql</db_type>
+        <url>jdbc:mysql://10.0.104.23:3306/member</url>
+        <user>bigdata</user>
+        <password>Big@@1228</password>
+    </db_connection>
+    <db_connection>
+        <name>mysql_hrtds</name>
+        <db_type>mysql</db_type>
+        <url>jdbc:mysql://10.0.100.47:1234/hrtds?useUnicode=true&amp;characterEncoding=utf8</url>
+        <user>bigdata</user>
+        <password>Big@@1228</password>
+    </db_connection>
+	<db_connection>
+        <name>mysql_hrtdsgo</name>
+        <db_type>mysql</db_type>
+        <url>jdbc:mysql://10.0.108.151:3307/hrtdsgo?useUnicode=true&amp;characterEncoding=utf8</url>
+        <user>bigdata</user>
+        <password>Bigdata@9876</password>
+    </db_connection>
+    <db_connection>
+        <name>mysql_merchant</name>
+        <db_type>mysql</db_type>
+        <url>jdbc:mysql://10.0.104.100:1234/merchant?useUnicode=true&amp;characterEncoding=utf8</url>
+        <user>bigdata</user>
+        <password>Big1228!</password>
+    </db_connection>
+
+
+
+
+
+
+    <!-- ********************************** DEV ******************************** -->
+    <!-- DEV Spark Conf -->
+    <spark_conf>
+        <name>dev_spark_cdh_5.11</name>
+        <host_and_port>spark://10.0.53.56:7077</host_and_port>
+        <hdfs_xml_source>/crt/etlprocesses/xml/</hdfs_xml_source>
+        <executor_memory>2g</executor_memory>
+        <driver_memory>5g</driver_memory>
+        <cores_max>2</cores_max>
+        <executor_cores>1</executor_cores>
+        <sql_crossjoin_enabled>true</sql_crossjoin_enabled>
+        <hive_exec_dynamic_partition>true</hive_exec_dynamic_partition>
+        <hive_exec_dynamic_partition_mode>nonstrict</hive_exec_dynamic_partition_mode>
+        <hive_exec_max_dynamic_partitions>3650</hive_exec_max_dynamic_partitions>
+        <hive_exec_max_dynamic_partitions_pernode>3650</hive_exec_max_dynamic_partitions_pernode>
+    </spark_conf>
+
+
+    <kudu_conf>
+        <name>dev_kudu</name>
+        <host_and_port>10.0.53.56:7051</host_and_port>
+    </kudu_conf>
+
+
+    <!-- DEV MySQL -->
+    <db_connection>
+        <name>dev_mysql_hrtds</name>
+        <db_type>mysql</db_type>
+        <url>jdbc:mysql://10.0.53.15:3306/hrtds</url>
+        <user>hrtds</user>
+        <password>Hrtds@2016</password>
+    </db_connection>
+    <db_connection>
+        <name>dev_mysql_member</name>
+        <db_type>mysql</db_type>
+        <url>jdbc:mysql://10.0.55.204:3306/member</url>
+        <user>member</user>
+        <password>Mem@2016</password>
+    </db_connection>
+    <db_connection>
+        <name>dev_mysql_merchant</name>
+        <db_type>mysql</db_type>
+        <url>jdbc:mysql://10.0.53.81:3306/merchant_imp</url>
+        <user>root</user>
+        <password>Big@2016</password>
+    </db_connection>
+    <db_connection>
+        <name>dev_mysql_hrtdsgo</name>
+        <db_type>mysql</db_type>
+        <url>jdbc:mysql://10.0.53.81:3306/kafka?useUnicode=true&amp;characterEncoding=UTF-8</url>
+        <user>root</user>
+        <password>Big@2016</password>
+    </db_connection>
+
+    <kafka_conf>
+        <name>dev_kafka_cdh_5.11</name>
+        <brokers>jtcrtvdra48:9092,jtcrtvdra18:9092,jtcrtvdra19:9092,jtcrtvdra47:9092,jtcrtvura207:9092</brokers>
+    </kafka_conf>
+
+    <kafka_conf>
+        <name>dev_kafka_confluent_3.2.1</name>
+        <brokers>jtcrtvdra104:9092</brokers>
+    </kafka_conf>
+</config>
